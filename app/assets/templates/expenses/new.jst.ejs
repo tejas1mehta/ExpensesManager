@@ -1,0 +1,41 @@
+<form id="submit_expense" class="form-horizontal col-xs-8 col-xs-offset-2">
+  <fieldset>
+  	<legend> Add a New Expense </legend>
+
+    <div class="form-group">
+      <label for="date_time" class="col-xs-2 control-label">Date and Time</label>
+      <div class="col-xs-10">
+        <input type="datetime-local" id="date_time" class="form-control" name="expense[date_time]">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="descr" class="col-xs-2 control-label">Description</label>
+      <div class="col-xs-10">
+        <textarea class="form-control" rows="3" id="descr"  name="expense[description]"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="amount" class="col-xs-2 control-label">Amount($) </label>
+      <div class="col-xs-10">
+        <input type="number" id="amount" step="any" class="form-control" name="expense[amount]"></input>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="comment" class="col-xs-2 control-label">Comment</label>
+      <div class="col-xs-10">
+        <input type="text" id="comment" class="form-control" name="expense[comment]">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-xs-10 col-xs-offset-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<br>
+<a href="#expenses/index"> <button type="submit" class="btn btn-primary">All Expenses</button> </a>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ExpensesManager</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="navbar"></div>
+  <script type="application/json" id="bootstrapped_current_user">
+    { "current_user": <%= !!current_user ? current_user.to_json.html_safe : "".to_json.html_safe  %> }
+  </script>
+	<br>
+	<br>
+	<div class="container">
+		<%= yield %>
+	</div>
+	<script type="text/javascript">
+	  var currentUserData = JSON.parse($("#bootstrapped_current_user").html());
+	  if (currentUserData.current_user){
+	    ExpensesManager.currentUser = new ExpensesManager.Models.User(currentUserData.current_user);
+	    ExpensesManager.addNavbar()
+	  }
+	</script>
+</body>
+</html>

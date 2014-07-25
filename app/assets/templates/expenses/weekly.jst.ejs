@@ -1,0 +1,24 @@
+<h1> Weekly Expenses </h1>
+<a href="#expenses/index"><button class="btn btn-primary btn-xs">All Expenses </button> </a>
+<button id="print" class="btn btn-primary btn-xs">Print </button>
+
+<table class="table table-striped table-hover ">
+	<thead>
+		<tr>
+		  <th> Week </th>
+		  <th> Total Expenses </th>
+		  <th> Average Expenses($) </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for (var week in weeklyExpenses){ %>
+			<tr>
+				    <td><%= week %></td>
+				    <td><%= weeklyExpenses[week]["total"] %></td>
+				    <td><%= weeklyExpenses[week]["avgExpenses"] %></td>
+		  	</tr>
+		<% } %>
+		<div id="navpage"></div>
+	</tbody>
+</table>
+
