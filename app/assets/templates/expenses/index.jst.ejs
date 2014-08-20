@@ -34,27 +34,27 @@
 			<tr>
 				<% if (!editExpenses[expense.id]){ %>
 					<td>  
-					<% if (expense.get("date_time")) { %>  
-					    <%= expense.get("date_time").substring(0,10) + " " + expense.get("date_time").substring(11,16)%>
+					<% if (expense.escape("date_time")) { %>  
+					    <%= expense.escape("date_time").substring(0,10) + " " + expense.escape("date_time").substring(11,16)%>
 					<% }%>
 					</td>
-				    <td><%= expense.get("description") %></td>
-				    <td><%= expense.get("amount") %></td>
-				    <td><%= expense.get("comment") %></td>
+				    <td><%= expense.escape("description") %></td>
+				    <td><%= expense.escape("amount") %></td>
+				    <td><%= expense.escape("comment") %></td>
 				    <td><button type="submit" class="btn btn-primary btn-xs" id="edit" data-id=<%= expense.id %>>Edit Expense </button> </td>
 				    <td> <button type="submit" class="btn btn-primary btn-xs" id="delete" data-id=<%= expense.id %>>Delete Expense </button> </td>
 				<% } else { %>
 					<td>  
-					<% if (expense.get("date_time")) { %>  
-					    <%= expense.get("date_time").substring(0,10) + " " + expense.get("date_time").substring(11,16)%>
+					<% if (expense.escape("date_time")) { %>  
+					    <%= expense.escape("date_time").substring(0,10) + " " + expense.escape("date_time").substring(11,16)%>
 					<% }%>
 					</td>
 					<td colspan="4">
 					<form id="update" colspan="4" data-id=<%= expense.id %>>
-					    <label> Description: <input type="text" class="form-control" id="descr"  name="expense[description]" value="<%= expense.get("description") %>"></label>
-					    <label> Amount: <input type="number" id="amount" step="any" class="form-control" name="expense[amount]" value=<%= expense.get("amount") %>></input></label>
+					    <label> Description: <input type="text" class="form-control" id="descr"  name="expense[description]" value="<%= expense.escape("description") %>"></label>
+					    <label> Amount: <input type="number" id="amount" step="any" class="form-control" name="expense[amount]" value=<%= expense.escape("amount") %>></input></label>
 					    <label> Comment: <input type="text" id="comment" class="form-control" name="expense[comment]" 
-					    value="<%= expense.get("comment") %>"></label>
+					    value="<%= expense.escape("comment") %>"></label>
 				    	<button type="submit" class="btn btn-primary btn-xs">Update Expense </button> </td>
 				    </form>
 			    	<td> <button type="submit" class="btn btn-primary btn-xs" id="delete" data-id=<%= expense.id %>>Delete Expense </button> </td>			
